@@ -5,3 +5,5 @@
 
 使用 internet gateway 與 nat gateway，連接到外部網路
 外部使用者可以使用跳板機連線到私網 Ec2
+
+![以下是架構圖](架構圖.png)
