@@ -192,8 +192,9 @@ resource "aws_key_pair" "public_subnet_ssh_key_pair" {
 
 //把公網的私鑰到保存本地檔案
 resource "local_file" "private_key_pub_subnet" {
-  filename = "/Users/maxchauo/terraform/pub_subnet_private_key.pem"
+  filename = pathexpand("${path.root}/pub_subnet_private_key.pem")
   content  = tls_private_key.public_subnet_ssh_key.private_key_pem
+
 }
 
 
@@ -219,7 +220,7 @@ resource "aws_key_pair" "private_subnet_ssh_key_pair" {
 
 //把私網的私鑰到保存本地檔案
 resource "local_file" "private_key_pvt_subnet" {
-  filename = "/Users/maxchauo/terraform/pvt_subnet_private_key.pem"
+    filename = pathexpand("${path.root}/pvt_subnet_private_key.pem")
   content  = tls_private_key.private_subnet_ssh_key.private_key_pem
 }
 
