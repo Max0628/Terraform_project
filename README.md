@@ -18,7 +18,7 @@ before use this script,make sure to do the following steps:
 
 ### deployment flow
 
-1. install terraform cli：
+1. install terraform cli
 
    ```bash
    brew install terraform
@@ -26,11 +26,13 @@ before use this script,make sure to do the following steps:
 
 1. initial Terraform：
 
+   to initialize tf.state
+
    ```bash
    terraform init
    ```
 
-1. check deploy plan：
+1. to preview the infrastructure changes：
 
    ```bash
    terraform plan
@@ -45,14 +47,14 @@ before use this script,make sure to do the following steps:
 
 After deployment,get connect to EC2 by the follow steps
 
-1. Change the permissions of the private key file:
+1. Change the permissions of the private key file(only user can read and write):
 
    ```bash
    chmod 600 pub_subnet_private_key.pem
    chmod 600 pvt_subnet_private_key.pem
    ```
 
-2. Inspect the connection:
+2. Inspect the connection(use this output for connection):
 
    ```bash
    terraform output
